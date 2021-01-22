@@ -1,7 +1,7 @@
 # Личный проект «Глейси»
 
 * Студент: [Давид Кан](https://up.htmlacademy.ru/htmlcss/30/user/587963).
-* Наставник: `Неизвестно`.
+* Наставник: [Алексей Елькин](https://htmlacademy.ru/profile/alex_elkin).
 
 ---
 
