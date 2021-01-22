@@ -21,7 +21,86 @@
       </nav>
     </header>
     <main>
+      <h1 class="visually-hidden">Глэйси — магазин мороженого собственного производства</h1>
+      <div class="carousel">
 
+      </div>
+      <section class="promo">
+        <h2 class="visually-hidden">Акции</h2>
+        <ul class="promo__list">
+          <li>
+            <section class="card promo__item">
+              <h3>Малинка даром!</h3>
+              <p>При покупке 2 кг любого фруктового мороженого, добавим в ваш заказ банку малинового варенья бесплатно.</p>
+              <a href="#" class="btn card__btn">Хочу варенье!</a>
+            </section>
+          </li>
+          <li>
+            <section class="card promo__item">
+              <h3>Шоколадки даром!</h3>
+              <p>При покупке 2 кг пломбира, добавим в ваш заказ упаковку вкуснейшей шоколадной присыпки совершенно бесплатно.</p>
+              <a href="#" class="btn card__btn">Хочу варенье!</a>
+            </section>
+          </li>
+        </ul>
+      </section>
+      <section class="catalog">
+        <h2 class="visually-hidden">Хиты продаж</h2>
+        <ul class="catalog__list">
+          <li class="catalog__item catalog__item--hit product-card">
+            <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
+            <p class="product-card__price"><span>310</span>₽/кг</p>
+            <p class="product-card__name">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+          </li>
+          <li class="catalog__item catalog__item--hit product-card">
+            <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
+            <p class="product-card__price"><span>380</span>₽/кг</p>
+            <p class="product-card__name">Сливочно-кофейное с кусочками шоколада</p>
+          </li>
+          <li class="catalog__item catalog__item--hit product-card">
+            <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
+            <p class="product-card__price"><span>355</span>₽/кг</p>
+            <p class="product-card__name">Сливочно-клубничное с присыпкой из белого шоколада</p>
+          </li>
+          <li class="catalog__item catalog__item--hit product-card">
+            <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
+            <p class="product-card__price"><span>415</span>₽/кг</p>
+            <p class="product-card__name">Сливочное крем-брюле с карамельной подливкой </p>
+          </li>
+        </ul>
+      </section>
+      <section class="about">
+        <h2 class="visually-hidden">О нас</h2>
+        <p class="about__title">Магазин Глэйси – это онлайн и офлайн-магазин по продаже мороженого собственного производства на развес</p>
+        <ul class="about__advantages-list advantages">
+          <li class="advantages__item advantages__item--equipment">Все наше мороженое изготавливается на собственном производстве, с использованием современного оборудования и проверенных временем технологий.</li>
+          <li class="advantages__item advantages__item--ingredients">Закупка ингредиентов производится только у проверенных фермерских хозяйств и компаний, с которыми нас связывает долговременное сотрудничество.</li>
+          <li class="advantages__item advantages__item--milk">Для приготовления мороженого используются настоящие сливки и молоко высочайшего качества. Все дополнительные ингредиенты и добавки произведены из натурального, экологически чистого сырья.</li>
+          <li class="advantages__item advantages__item--delivery">Доставка нашего мороженого до заказчиков осуществляется в специальном термопаке, который не дает мороженому растаять в пути и позволяет сохранить превосходный вкус.</li>
+        </ul>
+      </section>
+      <div class="">
+        <article class="new-blog">
+          <h1>Новое в нашем блоге</h1>
+          <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
+        </article>
+        <section class="newsletter">
+          <h2 class="visually-hidden">Подписаться на рассылку</h2>
+          <p>Подпишитесь на нашу сладкую рассылку и будьте всегда в курсе всего самого вкусного, что у нас происходит. Обещаем не спамить и не слать всякой ненужной ерунды. Честно =)</p>
+          <form class="newsletter__form newsletter-form" action="index.html" method="post">
+            <label><span class="visually-hidden">Ваш e-mail</span><input type="mail" placeholder="email@example.com"></label>
+            <button type="submit" class="btn newsletter-form__submit-btn">Отправить</button>
+          </form>
+        </section>
+        <section class="contacts">
+          <a class="contacts__map"><span class="visually-hidden">Мы на карте</span></a>
+          <div class="contacts__content">
+            <p>Адрес главного офиса<br>и офлайн-магазина: <a href="https://yandex.ru/maps/2/saint-petersburg/house/bolshaya_konyushennaya_ulitsa_19_8/Z0kYdQVjSEQPQFtjfXVyeXpgYQ==/?ll=30.323319%2C59.938663&source=wizgeo&utm_medium=maps-desktop&utm_source=serp&z=20">ул. Большая Конюшенная, 19/8, Санкт-Петербург</a></p>
+            <p>Для заказов по телефону:<br><a href="tel:+78124502525">8 812 450-25-25</a><br>(с 10 до 20 ежедневно)</p>
+            <a href="#" class="btn contacts__feedback">Форма обратной связи</a>
+          </div>
+        </section>
+      </div>
     </main>
     <footer>
 
