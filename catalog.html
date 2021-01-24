@@ -25,7 +25,85 @@
       </div>
     </header>
     <main>
-
+      <ul class="breadcrumbs">
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="#">Каталог</a></li>
+        <li><a>Сливочное</a></li>
+      </ul>
+      <h1>Сливочное мороженное</h1>
+      <aside class="filter">
+        <form class="filter__form filter-form" action="catalog.html" method="post">
+          <fieldset name="sort">
+            <legend>Сортировка:</legend>
+            <select name="sort-by">
+              <option value="pop">по популярности</option>
+              <option value="price-up">сначала недорогие</option>
+              <option value="price-down">сначала дорогие</option>
+              <option value="fat-content">по жирности</option>
+            </select>
+          </fieldset>
+          <fieldset name="price">
+            <legend>Цена:</legend>
+            <ul class="filter-form__price-container">
+              <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100"></li>
+              <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500"></li>
+            </ul>
+            <div class="range-controls filter-form__range-controls">
+              <div class="range-controls__scale">
+                <div class="range-controls__bar">
+                  <div class="range-controls__toggle range-controls__toggle--min"></div>
+                  <div class="range-controls__toggle range-controls__toggle--max"></div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset name="fat-content">
+            <ul class="filter-form__list">
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="radio" name="fc-filter" value="0" id="fc-0">
+                <label for="fc-0">0%</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="radio" name="fc-filter" value="to-10" id="fc-to-10" checked>
+                <label for="fc-to-10">до 10%</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="radio" name="fc-filter" value="to-30" id="fc-to-30">
+                <label for="fc-to-30">до 30%</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="radio" name="fc-filter" value="from-30" id="fc-from-30">
+                <label for="fc-from-30">выше 30%</label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset name="additives">
+            <ul class="filter-form__list">
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="checkbox" name="additives-filter" value="choco" id="additives-choco" checked>
+                <label for="additives-choco">шоколадные</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="checkbox" name="additives-filter" value="sugar" id="additives-sugar" checked>
+                <label for="additives-sugar">сахарные присыпки</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="checkbox" name="additives-filter" value="fruits" id="additives-fruits">
+                <label for="additives-fruits">фрукты</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="checkbox" name="additives-filter" value="syrup" id="additives-syrup">
+                <label for="additives-syrup">сиропы</label>
+              </li>
+              <li class="filter-form__item">
+                <input class="visually-hidden" type="checkbox" name="additives-filter" value="jam" id="additives-jam">
+                <label for="additives-jam">джемы</label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit" name="submit" class="btn filter-form__submit">Применить</button>
+        </form>
+      </aside>
     </main>
     <footer class="main-footer">
       <section class="main-footer__social social">
