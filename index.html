@@ -6,7 +6,7 @@
   </head>
   <body>
     <header class="main-header">
-      <img src="https://via.placeholder.com/154x64" width="154" height="64" alt="GllacyShop">
+      <a class="btn logo main-header__logo"><img src="https://via.placeholder.com/154x64" width="154" height="64" alt="GllacyShop"></a>
       <nav class="main-header__nav main-nav">
         <ul class="main-nav__pages nav-pages">
           <li><a class="btn nav-pages__btn" href="catalog.html">Каталог</a></li>
@@ -27,6 +27,7 @@
     <main>
       <h1 class="visually-hidden">Глэйси — магазин мороженого собственного производства</h1>
       <section class="carousel">
+        <h2 class="visually-hidden">Новинки и хиты</h2>
         <ul class="carousel__list">
           <li class="carousel__item carousel-slide">
             <p>Крем-брюле и пломбир с малиновым джемом</p>
@@ -40,6 +41,11 @@
             <p>Пломбир с помадкой и клубничный щербет</p>
             <a href="#" class="btn carousel-slide__btn">Дайте оба!</a>
           </li>
+        </ul>
+        <ul class="carousel__controls">
+          <li><a href="#"><span class="visually-hidden">1</span></a></li>
+          <li><a href="#"><span class="visually-hidden">2</span></a></li>
+          <li><a href="#"><span class="visually-hidden">3</span></a></li>
         </ul>
       </section>
       <section class="promo">
@@ -68,21 +74,25 @@
             <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
             <p class="product-card__price"><span>310</span>₽/кг</p>
             <p class="product-card__name">Сливочное с апельсиновым джемом и цитрусовой стружкой</p>
+            <a href="#" class="btn product-card__btn">Быстрый просмотр</a>
           </li>
           <li class="catalog__item catalog__item--hit product-card">
             <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
             <p class="product-card__price"><span>380</span>₽/кг</p>
             <p class="product-card__name">Сливочно-кофейное с кусочками шоколада</p>
+            <a href="#" class="btn product-card__btn">Быстрый просмотр</a>
           </li>
           <li class="catalog__item catalog__item--hit product-card">
             <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
             <p class="product-card__price"><span>355</span>₽/кг</p>
             <p class="product-card__name">Сливочно-клубничное с присыпкой из белого шоколада</p>
+            <a href="#" class="btn product-card__btn">Быстрый просмотр</a>
           </li>
           <li class="catalog__item catalog__item--hit product-card">
             <img src="https://via.placeholder.com/267x267" width="267" height="267" alt="Здесь должно быть фото мороженки, но что-то пошло не так :)">
             <p class="product-card__price"><span>415</span>₽/кг</p>
             <p class="product-card__name">Сливочное крем-брюле с карамельной подливкой </p>
+            <a href="#" class="btn product-card__btn">Быстрый просмотр</a>
           </li>
         </ul>
       </section>
@@ -98,7 +108,7 @@
       </section>
       <div class="">
         <article class="new-blog">
-          <h1>Новое в нашем блоге</h1>
+          <h2>Новое в нашем блоге</h2>
           <a href="#">10 способов сервировки фруктовых щербетов к столу</a>
         </article>
         <section class="newsletter">
