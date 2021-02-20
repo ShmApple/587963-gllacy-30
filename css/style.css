@@ -98,13 +98,14 @@
 
 /*Global*/
 
-
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
-  appearance: none;
-  outline: none;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
@@ -116,6 +117,11 @@ body {
   color: var(--text-color);
 
   background-color: var(--bg-1);
+
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content 1fr min-content;
+  align-content: start;
 }
 
 a {
@@ -127,12 +133,9 @@ img {
   max-width: 100%;
 }
 
-html {
-  box-sizing: border-box;
-}
-
 button {
   border: none;
+  appearance: none;
 }
 
 h1 {
@@ -209,17 +212,26 @@ h1 {
   margin: 0 auto;
 }
 
+.main-header {
+  z-index: 1;
+}
+
 .main-header__container {
-  display: flex;
   align-items: center;
 }
 
 .main-header__container--up {
   padding-top: 9px;
+  display: grid;
+  grid-template-columns: min-content 1fr;
 }
 
 .main-header__container--down {
   padding-top: 1px;
+}
+
+.main-header__logo {
+  min-width: 154px;
 }
 
 .main-nav {
@@ -236,6 +248,16 @@ h1 {
 
 .main-nav__pages {
   margin-left: 10px;
+}
+
+.submenu {
+  display: none;
+  position:absolute;
+}
+
+.nav-pages__item:hover .submenu,
+.nav-pages__item:focus-within .submenu {
+  display:block;
 }
 
 .main-header__buttons {
@@ -282,7 +304,8 @@ h1 {
   background: var(--nav-btn);
 }
 
-.nav-pages__btn[href]:hover, .nav-pages__btn[href]:focus, .nav-buttons__btn[href]:hover, .nav-buttons__btn[href]:focus {
+.nav-pages__btn[href]:hover, .nav-pages__btn[href]:focus, .nav-buttons__btn[href]:hover, .nav-buttons__btn[href]:focus,
+.nav-pages__item:hover .nav-pages__btn {
   background: var(--nav-btn-hover);
   color: var(--extra-text-color);
 }
@@ -354,6 +377,19 @@ h1 {
   width: 100%;
 }
 
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 26px;
+  row-gap: 40px;
+  margin-bottom: 40px;
+}
+
+.carousel {
+  position: relative;
+  grid-column: 1/-1;
+}
+
 .carousel__slides-list {
   margin: 0;
   padding: 0;
@@ -361,13 +397,10 @@ h1 {
 }
 
 .carousel-slide {
+  padding: 274px 237px 0;
   display: none;
   flex-direction: column;
   align-items: center;
-}
-
-.carousel__slides-list {
-  padding: 274px 237px 41px;
 }
 
 .carousel-slide__title {
@@ -388,10 +421,11 @@ h1 {
 .carousel-slide img {
   display: none;
   position: absolute;
-  top: 0;
+  top: -372px;
   left: 50%;
   transform: translate(-50%);
   z-index: -1;
+  max-width: none;
 }
 
 .carousel-slide--active, .carousel-slide--active img {
@@ -403,34 +437,44 @@ h1 {
   padding: 0;
   display: flex;
   list-style: none;
+  position: absolute;
+  bottom: 43px;
+  left: 0;
 }
 
-/* .carousel__controls li {
+.carousel__controls li {
   padding-left: 8px;
 }
 
 .carousel__controls li:first-child {
   padding: 0;
-} */
+}
 
 .promo {
-  margin-bottom: 40px;
+  grid-column: 1/-1;
 }
 
 .promo__list {
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
-  display: flex;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: center; */
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.promo__list li:nth-child(2n) {
+/* .promo__list li:nth-child(2n) {
   margin-left: 26px;
+} */
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 26px;
+  row-gap: 40px;
 }
 
 .card {
@@ -438,6 +482,8 @@ h1 {
   min-height: 229px;
   border-radius: 16px;
   padding: 13px 22px 22px 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .promo__item--raspberry {
@@ -450,6 +496,7 @@ h1 {
 
 .card h3 {
   margin: 0;
+  margin-bottom: 16px;
   font-weight: bold;
   font-size: 35px;
   line-height: 41px;
@@ -457,28 +504,27 @@ h1 {
 
 .card p {
   margin: 0;
+  margin-bottom: 9px;
   padding: 0;
 }
 
+.card__btn {
+  margin-left: auto;
+  margin-top: auto;
+}
+
 .catalog {
-  margin-bottom: 40px;
+  grid-column: 1/-1;
 }
 
 .catalog__list {
   margin: 0;
   padding: 0;
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.catalog__item {
-  margin-left: 26px;
-  margin-top: 40px;
-}
-
- .catalog__item:nth-child(4n-3) {
-  margin-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 26px;
+  row-gap: 40px;
 }
 
 .catalog__item--hit::before {
@@ -496,9 +542,10 @@ h1 {
 }
 
 .product-card {
-  width: 267px;
+  /* width: 267px; */
   text-align: center;
   position: relative;
+  outline: none;
 }
 
 .product-card img {
@@ -515,9 +562,7 @@ h1 {
   /* display: none; */
   visibility: hidden;
   opacity: 0;
-  transition-property: opacity;
-  transition-duration: 0.3s;
-  transition-delay: 0.3s;
+  transition: none;
 }
 
 .product-card:hover, .product-card:focus-within {
@@ -527,24 +572,31 @@ h1 {
 .product-card:hover .product-card__btn, .product-card:focus-within .product-card__btn {
   /* display: block; */
   visibility: visible;
+  transition: opacity;
+  transition-duration: 0.35s;
+  transition-delay: 0.15s;
   opacity: 1;
 }
 
 .product-card::after {
   content: "";
-  width: calc(100% + 26px);
+  width: 0;
   height: 0;
   position: absolute;
-  left: -13px;
-  top: -6px;
+  top: 50%;
+  left: 50%;
   z-index: -1;
   background-color: var(--interactive-elements);
-  border-radius: 4px;
-  transition: 0.3s;
+  border-radius: 50%;
+  transition: 0.2s;
 }
 
 .product-card:hover::after, .product-card:focus-within::after {
   height: calc(100% + 86px);
+  width: calc(100% + 26px);
+  left: -13px;
+  top: -6px;
+  border-radius: 4px;
 }
 
 .product-card__price {
@@ -566,7 +618,8 @@ h1 {
 }
 
 .about {
-  margin: 0  0 40px;
+  grid-column: 1/-1;
+  margin: 0;
   border-radius: 16px;
   background-image: url(../img/background-waffle.jpg);
   background-repeat: repeat;
@@ -603,13 +656,8 @@ h1 {
   margin-left: 26px;
 }
 
-.container > .container {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 40px;
-}
-
 .new-blog {
+  grid-column: 1/3;
   padding: 20px 250px 20px 20px;
   color: var(--extra-text-color);
   background-image: url(../img/background-strawberry.jpg);
@@ -626,17 +674,17 @@ h1 {
   line-height: 22px;
 }
 
-.new-blog a {
+.new-blog a[href] {
   font-weight: bold;
   font-size: 24px;
   line-height: 30px;
   text-decoration: underline;
+  text-decoration-color: inherit;
 }
 
 .newsletter {
+  grid-column: 3/5;
   padding: 5px 6px;
-  width: 560px;
-  margin-left: 26px;
   background-image: url(../img/background-mail.png);
   color: var(--extra-text-color);
   min-height: 220px;
