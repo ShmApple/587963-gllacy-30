@@ -16,14 +16,23 @@
         <a href="index.html" class="logo main-header__logo"><img src="img/logo-gllacy.svg" width="154" height="64" alt="GllacyShop"></a>
         <nav class="main-header__nav main-nav">
           <ul class="main-nav__pages nav-pages">
-            <li><a class="btn nav-pages__btn nav-pages__btn--active">Каталог</a></li>
-            <li><a href="#" class="btn nav-pages__btn">Доставка и оплата</a></li>
-            <li><a href="#" class="btn nav-pages__btn">О компании</a></li>
+            <li class="nav-pages__item">
+              <a href="#" class="btn nav-pages__btn nav-pages__btn--current">Каталог</a>
+              <ul class="nav-pages__dropdown dropdown">
+                <li><a href="#" class="dropdown__link dropdown__link--with-underline">Новинки</a></li>
+                <li><a class="dropdown__link dropdown__link--current">Сливочное</a></li>
+                <li><a href="#" class="dropdown__link">Щербеты</a></li>
+                <li><a href="catalog.html" class="dropdown__link">Фруктовый лед</a></li>
+                <li><a href="#" class="dropdown__link">Мелорин</a></li>
+              </ul>
+            </li>
+            <li class="nav-pages__item"><a href="#" class="btn nav-pages__btn">Доставка и оплата</a></li>
+            <li class="nav-pages__item"><a href="#" class="btn nav-pages__btn">О компании</a></li>
           </ul>
           <ul class="main-header__buttons nav-buttons">
-            <li><a href="#" class="btn nav-buttons__btn"><span class="visually-hidden">Поиск</span></a></li>
-            <li><a href="#" class="btn nav-buttons__btn">Вход</a></li>
-            <li><a href="#" class="btn nav-buttons__btn"><span>2 товара</span></a></li>
+            <li class="nav-buttons__item"><a href="#" class="btn nav-buttons__btn"><span class="visually-hidden">Поиск</span></a></li>
+            <li class="nav-buttons__item"><a href="#" class="btn nav-buttons__btn">Вход</a></li>
+            <li class="nav-buttons__item"><a href="#" class="btn nav-buttons__btn"><span>2 товара</span></a></li>
           </ul>
         </nav>
       </div>
@@ -44,7 +53,7 @@
         <h1>Сливочное мороженное</h1>
         <aside class="filter">
           <form class="filter__form filter-form" action="https://echo.htmlacademy.ru/" method="post">
-            <fieldset name="sort">
+            <fieldset name="sort" class="filter-form__fieldset">
               <legend>Сортировка:</legend>
               <select name="sort-by" class="filter-form__inputs filter-form__inputs--sort-by">
                 <option value="pop">по популярности</option>
@@ -53,22 +62,23 @@
                 <option value="fat-content">по жирности</option>
               </select>
             </fieldset>
-            <fieldset name="price">
+            <fieldset name="price" class="filter-form__fieldset filter-form__fieldset--price">
               <legend>Цена:</legend>
               <ul>
-                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100"></li>
-                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500"></li>
+                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100"> ₽ –</li>
+                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500"> ₽</li>
               </ul>
               <div class="filter-form__inputs filter-form__inputs--range-controls range-controls">
                 <div class="range-controls__scale">
                   <div class="range-controls__bar">
+                    <div class="range-controls__bar--active"></div>
                     <div class="range-controls__toggle range-controls__toggle--min"></div>
                     <div class="range-controls__toggle range-controls__toggle--max"></div>
                   </div>
                 </div>
               </div>
             </fieldset>
-            <fieldset name="fat-content">
+            <fieldset name="fat-content" class="filter-form__fieldset">
               <legend>Жирность:</legend>
               <ul class="filter-form__inputs filter-form__inputs--fat-content">
                 <li class="filter-form__item form-item">
@@ -89,7 +99,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset name="additives">
+            <fieldset name="additives" class="filter-form__fieldset">
               <legend>Наполнители:</legend>
               <ul class="filter-form__inputs filter-form__inputs--additives">
                 <li class="filter-form__item form-item">
