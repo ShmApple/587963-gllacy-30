@@ -37,6 +37,7 @@
   --opacity-04-white: rgba(255, 255, 255, 0.4);
   --opacity-03-white: rgba(255, 255, 255, 0.3);
   --opacity-02-white: rgba(255, 255, 255, 0.2);
+  --opacity: rgba(255, 255, 255, 0);
   --black: #000000;
   --opacity-04-black: rgba(0, 0, 0, 0.4);
   --opacity-02-black: rgba(0, 0, 0, 0.2);
@@ -78,6 +79,7 @@
   --bg-1: #849D8F;
   --bg-2: #8996A6;
   --bg-3: #9D8B84;
+  --body-bg: linear-gradient(180deg, var(--opacity-02-white) 0%, var(--opacity) 100%);
   --sections-bg: var(--light-beige);
   --extra-sections-bg: var(--light);
   --text-color: var(--white);
@@ -194,6 +196,17 @@ h1 {
   border: 0;
 
   clip: rect(0 0 0 0);
+}
+
+.main-body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 656px;
+  background: var(--body-bg);
+  z-index: -10;
 }
 
 .btn {
@@ -345,6 +358,7 @@ h1 {
 
 .main-header__container--down {
   margin-top: -3px;
+  margin-bottom: -25px;
 }
 
 .logo {
@@ -633,12 +647,22 @@ h1 {
 
 .dropdown--catalog .dropdown__link--with-underline {
   margin-bottom: 10px;
-  overflow: hidden;
 
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
-  text-overflow: ellipsis;
+  position: relative;
+}
+
+.dropdown__link--with-underline::after {
+  content: "";
+  width: calc(100% - 15px);
+  border-top: 1px solid rgba(50, 50, 50, 0.2);
+  display: block;
+  position: absolute;
+  left: 6px;
+  bottom: -6px;
+  z-index: 5;
 }
 
 .dropdown--login {
@@ -759,7 +783,7 @@ h1 {
   display: none;
   flex-direction: column;
   align-items: center;
-  padding: 274px 237px 1px;
+  padding: 299px 237px 1px;
 }
 
 .carousel-slide__title {
@@ -784,7 +808,7 @@ h1 {
 
 .carousel-slide img {
   position: absolute;
-  top: -374px;
+  top: -349px;
   left: 50%;
   z-index: -1;
 
@@ -1363,12 +1387,14 @@ h1 {
   margin: 0;
   margin-bottom: 9px;
   padding: 0;
+  font-size: 14px;
+  line-height: 16px;
 
   list-style: none;
 }
 
 .breadcrumbs__item {
-  margin-left: 22px;
+  margin-left: 23px;
 }
 
 .breadcrumbs__item:first-child {
@@ -1391,6 +1417,7 @@ h1 {
   padding: 0;
 
   border: 0;
+
 }
 
 .filter-form__fieldset,
@@ -1398,11 +1425,20 @@ h1 {
   margin-bottom: 13px;
 }
 
+.filter-form__fieldset legend {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
 .filter-form__fieldset--price {
   display: grid;
+  row-gap: 6px;
   min-width: 218px;
 
   grid-template-columns: min-content 1fr;
+  align-items: baseline;
 }
 
 .filter-form__fieldset--price legend {
@@ -1410,6 +1446,9 @@ h1 {
 }
 
 .filter-form__fieldset--price ul {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
   display: grid;
   margin: 0;
   margin-left: 5px;
