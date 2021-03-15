@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Глейси</title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-min.css">
     <link rel="icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/favicons/favicon-apple.png">
     <link rel="icon" href="img/favicons/favicon-180.svg" type="image/svg+xml">
@@ -15,6 +15,7 @@
       <div class="container main-header__container main-header__container--up">
         <a class="logo main-header__logo" href="index.html">
           <img src="img/logo-gllacy.svg" width="154" height="64" alt="GllacyShop">
+          <span class="visually-hidden">На главную</span>
         </a>
         <nav class="main-header__nav main-nav">
           <ul class="main-nav__pages nav-pages">
@@ -35,8 +36,9 @@
             <li class="nav-buttons__item">
               <a href="#" class="btn nav-buttons__btn nav-buttons__btn--search"><span class="visually-hidden">Поиск</span></a>
               <div class="dropdown dropdown--search nav-buttons__dropdown nav-buttons__dropdown--search">
-                <form action="https://echo.htmlacademy.ru/" method="post">
-                  <input class="text-input" type="search" name="search" placeholder="Крем-брюле">
+                <form class="dropdown__form" action="https://echo.htmlacademy.ru/" method="post">
+                  <input class="text-input" id="search" type="search" name="search" placeholder="Крем-брюле">
+                  <label for="search" class="visually-hidden">Поиск по сайту</label>
                   <button type="submit" class="visually-hidden" tabindex="-1">Поиск</button>
                 </form>
               </div>
@@ -45,8 +47,10 @@
               <a href="#" class="btn nav-buttons__btn nav-buttons__btn--with-icon nav-buttons__btn--login">Вход</a>
               <div class="dropdown dropdown--login nav-buttons__dropdown nav-buttons__dropdown--login">
                 <form class="dropdown__form login-form" action="https://echo.htmlacademy.ru/" method="post">
-                  <input class="text-input login-form__input" type="email" name="login" placeholder="email@example.com">
-                  <input class="text-input login-form__input" type="password" name="pass" placeholder="......">
+                  <input class="text-input login-form__input" id="login" type="email" name="login" placeholder="email@example.com">
+                  <label for="login" class="visually-hidden">Электронная почта</label>
+                  <input class="text-input login-form__input" id="password" type="password" name="pass" placeholder="••••••">
+                  <label for="password" class="visually-hidden">Пароль</label>
                   <button type="submit" class="btn login-form__submit">Войти</button>
                   <div class="login-form__links">
                     <a href="#" class="link link--dark">Забыли пароль?</a>
@@ -130,17 +134,19 @@
               </label>
             </fieldset>
             <fieldset name="price" class="filter-form__fieldset filter-form__fieldset--price">
-              <legend>Цена:</legend>
-              <ul>
-                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100" min="0" max="10000" step="50"> ₽ –</li>
-                <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500" min="0" max="10000" step="50"> ₽</li>
-              </ul>
-              <div class="filter-form__inputs filter-form__inputs--range-controls range-controls">
-                <div class="range-controls__scale">
-                  <div class="range-controls__bar">
-                    <div class="range-controls__bar--active"></div>
-                    <div class="range-controls__toggle range-controls__toggle--min"></div>
-                    <div class="range-controls__toggle range-controls__toggle--max"></div>
+              <div class="filter-form__grid-container">
+                <legend>Цена:</legend>
+                <ul>
+                  <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100" min="0" max="10000" step="50"> ₽ –</li>
+                  <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500" min="0" max="10000" step="50"> ₽</li>
+                </ul>
+                <div class="filter-form__inputs filter-form__inputs--range-controls range-controls">
+                  <div class="range-controls__scale">
+                    <div class="range-controls__bar">
+                      <div class="range-controls__bar--active"></div>
+                      <div class="range-controls__toggle range-controls__toggle--min"></div>
+                      <div class="range-controls__toggle range-controls__toggle--max"></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -273,11 +279,11 @@
           <div class="catalog__pages pages">
             <ul class="pages__list">
               <li class="pages__item pages__control pages__control--left pages__control--disabled"><a><span class="visually-hidden">Назад</span></a></li>
-              <li class="pages__item"><a class="btn pages__page-btn pages__page-btn--active">1</a></li>
-              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">2</a></li>
-              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">3</a></li>
-              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">4</a></li>
-              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">5</a></li>
+              <li class="pages__item"><a class="btn pages__page-btn pages__page-btn--active">1<span class="visually-hidden"> страница</span></a></li>
+              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">2<span class="visually-hidden"> страница</span></a></li>
+              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">3<span class="visually-hidden"> страница</span></a></li>
+              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">4<span class="visually-hidden"> страница</span></a></li>
+              <li class="pages__item"><a href="#" class="btn pages__page-btn pages__page-btn">5<span class="visually-hidden"> страница</span></a></li>
               <li class="pages__item pages__control pages__control--right"><a href="#"><span class="visually-hidden">Вперёд</span></a></li>
             </ul>
           </div>
@@ -310,6 +316,6 @@
         </div>
       </div>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script-min.js"></script>
   </body>
 </html>
