@@ -1726,7 +1726,7 @@ button {
   margin-bottom: 13px;
 }
 
-.filter-form__fieldset legend {
+.filter-form__legend {
   margin-bottom: 6px;
   margin-left: 16px;
 
@@ -1744,7 +1744,7 @@ button {
   row-gap: 6px;
 }
 
-.filter-form__fieldset--price legend {
+.filter-form__fieldset--price .filter-form__legend {
   margin-bottom: -16px;
 }
 

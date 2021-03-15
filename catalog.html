@@ -123,7 +123,7 @@
         <aside class="filter">
           <form class="filter__form filter-form" action="https://echo.htmlacademy.ru/" method="get">
             <fieldset name="sort" class="filter-form__fieldset filter-form__fieldset--select">
-              <legend>Сортировка:</legend>
+              <legend class="filter-form__legend">Сортировка:</legend>
               <label>
                 <select name="sort-by" class="filter-form__inputs filter-form__inputs--sort-by">
                   <option value="pop">по популярности</option>
@@ -134,8 +134,9 @@
               </label>
             </fieldset>
             <fieldset name="price" class="filter-form__fieldset filter-form__fieldset--price">
+              <legend class="visually-hidden">Цена:</legend>
               <div class="filter-form__grid-container">
-                <legend>Цена:</legend>
+                <div class="filter-form__legend">Цена:</div>
                 <ul>
                   <li><input class="filter-form__input filter-form__input--price" type="number" name="price-from" value="100" min="0" max="10000" step="50"> ₽ –</li>
                   <li><input class="filter-form__input filter-form__input--price" type="number" name="price-to" value="500" min="0" max="10000" step="50"> ₽</li>
@@ -152,7 +153,7 @@
               </div>
             </fieldset>
             <fieldset name="fat-content" class="filter-form__fieldset">
-              <legend>Жирность:</legend>
+              <legend class="filter-form__legend">Жирность:</legend>
               <ul class="filter-form__inputs filter-form__inputs--fat-content">
                 <li class="filter-form__item form-item">
                   <input class="visually-hidden radio" type="radio" name="fc-filter" value="0" id="fc-0">
@@ -173,7 +174,7 @@
               </ul>
             </fieldset>
             <fieldset name="additives" class="filter-form__fieldset">
-              <legend>Наполнители:</legend>
+              <legend class="filter-form__legend">Наполнители:</legend>
               <ul class="filter-form__inputs filter-form__inputs--additives">
                 <li class="filter-form__item form-item">
                   <input class="visually-hidden checkbox" type="checkbox" name="additives-filter" value="choco" id="additives-choco" checked>
