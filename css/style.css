@@ -1860,8 +1860,7 @@ button {
   background: transparent;
   border: none;
 
-  -moz-appearance: textfield;
-       appearance: none;
+  appearance: textfield;
 }
 
 .filter-form__input--price {
@@ -1877,8 +1876,7 @@ button {
   background: transparent;
   border: none;
 
-  -moz-appearance: textfield;
-       appearance: none;
+  appearance: textfield;
 }
 
 .filter-form__input--price::-webkit-outer-spin-button,
