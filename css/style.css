@@ -1171,7 +1171,7 @@ button {
 }
 
 .catalog--with-pages {
-  padding-bottom: 29px;
+  padding-bottom: 27px;
 }
 
 .catalog__list {
@@ -2045,7 +2045,7 @@ button {
 
 .catalog__pages {
   display: flex;
-  margin-top: 76px;
+  margin-top: 74px;
 }
 
 .pages__list {
@@ -2082,7 +2082,7 @@ button {
 }
 
 .pages__item {
-  margin-right: 4px;
+  margin: 2px 4px 2px 0;
 }
 
 .pages__item:last-child {
