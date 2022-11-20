@@ -105,6 +105,65 @@ if (yaMap) {
   };
 }
 
+const carousel = document.querySelector(".carousel");
+if (carousel) {
+  const carouselItem1 = carousel.querySelector("#slide-1")
+  const carouselItem2 = carousel.querySelector("#slide-2")
+  const carouselItem3 = carousel.querySelector("#slide-3")
+  const carouselCtrl1 = carousel.querySelector("#control-1")
+  const carouselCtrl2 = carousel.querySelector("#control-2")
+  const carouselCtrl3 = carousel.querySelector("#control-3")
+  const body = document.querySelector(".main-body")
+
+  carouselCtrl1.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    carouselItem1.classList.add("carousel-slide--active");
+    carouselCtrl1.classList.add("controls__link--active");
+
+    carouselItem2.classList.remove("carousel-slide--active");
+    carouselCtrl2.classList.remove("controls__link--active");
+
+    carouselItem3.classList.remove("carousel-slide--active");
+    carouselCtrl3.classList.remove("controls__link--active");
+
+    body.classList.add("main-body--bg-1");
+    body.classList.remove("main-body--bg-2");
+    body.classList.remove("main-body--bg-3");
+  });
+
+  carouselCtrl2.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    carouselItem2.classList.add("carousel-slide--active");
+    carouselCtrl2.classList.add("controls__link--active");
+
+    carouselItem1.classList.remove("carousel-slide--active");
+    carouselCtrl1.classList.remove("controls__link--active");
+
+    carouselItem3.classList.remove("carousel-slide--active");
+    carouselCtrl3.classList.remove("controls__link--active");
+
+    body.classList.add("main-body--bg-2");
+    body.classList.remove("main-body--bg-1");
+    body.classList.remove("main-body--bg-3");
+  });
+
+  carouselCtrl3.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    carouselItem3.classList.add("carousel-slide--active");
+    carouselCtrl3.classList.add("controls__link--active");
+
+    carouselItem2.classList.remove("carousel-slide--active");
+    carouselCtrl2.classList.remove("controls__link--active");
+
+    carouselItem1.classList.remove("carousel-slide--active");
+    carouselCtrl1.classList.remove("controls__link--active");
+
+    body.classList.add("main-body--bg-3");
+    body.classList.remove("main-body--bg-1");
+    body.classList.remove("main-body--bg-2");
+  });
+}
+
 const resolveWidth = (field) => {
    const {length} = field.value.toString();
    field.style.width = `${length * 8}px`;

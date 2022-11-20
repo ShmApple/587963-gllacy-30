@@ -167,10 +167,16 @@ body {
   grid-template-rows: min-content 1fr min-content;
 }
 
-.main-body {
-  background-image: var(--body-bg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.main-body--bg-1 {
+  background-color: var(--bg-1);
+}
+
+.main-body--bg-2 {
+  background-color: var(--bg-2);
+}
+
+.main-body--bg-3 {
+  background-color: var(--bg-3);
 }
 
 a {
@@ -1667,14 +1673,14 @@ img {
   filter: none;
 }
 
-.main-footer__copyrigt {
+.main-footer__copyright {
   margin-top: -5px;
 
   font-size: 12px;
   line-height: 18px;
 }
 
-.main-footer__copyrigt p {
+.main-footer__copyright p {
   margin: 0;
   padding: 0;
 }

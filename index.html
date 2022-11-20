@@ -10,7 +10,7 @@
     <link rel="icon" href="img/favicons/favicon-180.svg" type="image/svg+xml">
     <link rel="manifest" href="manifest.webmanifest">
   </head>
-  <body>
+  <body class="main-body main-body--bg-1">
     <header class="main-header">
       <div class="container main-header__container main-header__container--up">
         <a class="logo main-header__logo">
@@ -75,26 +75,26 @@
         <section class="carousel">
           <h2 class="visually-hidden">Новинки и хиты</h2>
           <ul class="carousel__slides-list">
-            <li class="carousel__item carousel-slide carousel-slide--active">
+            <li class="carousel__item carousel-slide carousel-slide--active" id="slide-1">
               <p class="carousel-slide__title">Крем-брюле и пломбир с малиновым джемом</p>
               <a href="#" class="btn carousel-slide__btn">Давайте оба!</a>
               <img src="img/slider-img-with-backlight-1.png" width="1216" height="1216" alt="Крем-брюле и пломбир с малиновым джемом">
             </li>
-            <li class="carousel__item carousel-slide">
+            <li class="carousel__item carousel-slide" id="slide-2">
               <p class="carousel-slide__title">Шоколадный пломбир и лимонный сорбет</p>
               <a href="#" class="btn carousel-slide__btn">Давайте оба!</a>
               <img src="img/slider-img-with-backlight-2.png" width="1216" height="1216" alt="Шоколадный пломбир и лимонный сорбет">
             </li>
-            <li class="carousel__item carousel-slide">
+            <li class="carousel__item carousel-slide" id="slide-3">
               <p class="carousel-slide__title">Пломбир с помадкой и клубничный щербет</p>
               <a href="#" class="btn carousel-slide__btn">Давайте оба!</a>
               <img src="img/slider-img-with-backlight-3.png" width="1216" height="1216" alt="Пломбир с помадкой и клубничный щербет">
             </li>
           </ul>
           <ul class="carousel__controls controls">
-            <li><a href="#" class="controls__link controls__link--active"><span class="visually-hidden">1 слайд</span></a></li>
-            <li><a href="#" class="controls__link"><span class="visually-hidden">2 слайд</span></a></li>
-            <li><a href="#" class="controls__link"><span class="visually-hidden">3 слайд</span></a></li>
+            <li><a href="#" class="controls__link controls__link--active" id="control-1"><span class="visually-hidden">1 слайд</span></a></li>
+            <li><a href="#" class="controls__link" id="control-2"><span class="visually-hidden">2 слайд</span></a></li>
+            <li><a href="#" class="controls__link" id="control-3"><span class="visually-hidden">3 слайд</span></a></li>
           </ul>
         </section>
         <section class="promo">
@@ -205,7 +205,7 @@
             <li class="footer-nav__item"><a href="#" class="link">Экологические стандарты</a></li>
           </ul>
         </section>
-        <div class="main-footer__copyrigt">
+        <div class="main-footer__copyright">
           <a href="https://htmlacademy.ru/intensive/htmlcss" aria-label="На страницу HTML Academy"><img src="img/logo-html-academy.svg" width="108" height="39" alt="HTML Academy"></a>
           <p>Сделано в <a href="https://htmlacademy.ru/intensive/htmlcss" class="link">HTML Academy</a> © 2019</p>
         </div>
